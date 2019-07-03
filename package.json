@@ -1,0 +1,8 @@
+{
+  "name": "davevanhoorn.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:davevanhoorn/site.git",
+  "author": "Dave van Hoorn <yo@davevanhoorn.com>>",
+  "license": "MIT"
+}

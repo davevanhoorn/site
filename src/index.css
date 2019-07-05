@@ -615,7 +615,8 @@ video {
   padding-right: 1rem;
 }
 
-.navigation__link:hover {
+.navigation__link:hover,
+.navigation__link--active {
   color: #2d3748;
 }
 

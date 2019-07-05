@@ -1,12 +1,13 @@
 import React from "react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
+import { withRouter } from "react-router-dom";
 
-const Header = () => (
+const Header = (props: any) => (
   <header className="flex justify-between items-center pt-4">
     <Logo />
-    <Navigation />
+    <Navigation location={props.location.pathname} />
   </header>
 );
 
-export default Header;
+export default withRouter(Header);

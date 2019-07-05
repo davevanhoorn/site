@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "./components/header/Header";
 
-const App: React.FC = () => {
-  return <div className="bg-blue-500">Dit is een test</div>;
+const App = () => {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default App;

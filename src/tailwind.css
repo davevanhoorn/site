@@ -4,7 +4,7 @@
 
 /* Navigation */
 .navigation__link {
-	@apply .text-gray-500 .font-semibold .px-4;
+	@apply .text-gray-500 .px-4;
 }
 .navigation__link:hover,
 .navigation__link--active {

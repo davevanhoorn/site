@@ -5,11 +5,6 @@ const Navigation = (props: any) => {
   // Create navigation menu items
   let navigationMenu = [
     {
-      title: "Home",
-      path: "/",
-      class: ""
-    },
-    {
       title: "Blog",
       path: "/blog",
       class: ""
@@ -30,8 +25,6 @@ const Navigation = (props: any) => {
   navigationMenu.map(item =>
     Object.assign(item, { class: "navigation__link" })
   );
-
-  console.log(props.location);
 
   return (
     <div>

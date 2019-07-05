@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 
 const Header = () => (
-  <header className="container mx-auto">
+  <header className="flex justify-between items-center pt-4">
     <Logo />
     <Navigation />
   </header>

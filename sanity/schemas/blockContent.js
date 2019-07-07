@@ -20,7 +20,6 @@ export default {
           { title: "Emphasis", value: "em" },
           { title: "Underline", value: "underline" },
           { title: "Strike", value: "strike-through" },
-          { title: "Code", value: "code" },
         ],
         annotations: [
           {
@@ -41,6 +40,10 @@ export default {
     {
       type: "image",
       options: { hotspot: true },
+    },
+    {
+      type: "code",
+      title: "Code",
     },
   ],
 }

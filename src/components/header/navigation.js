@@ -9,11 +9,11 @@ const Navigation = props => {
       path: "/",
       class: "",
     },
-    {
-      title: "Contact",
-      path: "/contact/",
-      class: "",
-    },
+    // {
+    //   title: "Contact",
+    //   path: "/contact/",
+    //   class: "",
+    // },
   ]
 
   // Add class name "navigation__link" to each item in the object

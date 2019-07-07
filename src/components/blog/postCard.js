@@ -29,7 +29,7 @@ const PostCard = props => {
         </div>
         <div className="flex-grow border-r border-b border-l border-gray-300 lg:border-l-0 lg:border-t lg:border-gray-300 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div className="mb-3">
-            <div className="text-gray-800 font-semibold text-xl mb-2">
+            <div className="text-gray-800 font-semibold text-2xl mb-2 ">
               {title}
             </div>
             <p className="text-gray-700 text-base">{excerpt}</p>
@@ -46,13 +46,15 @@ const PostCard = props => {
           </div>
           <div className="flex items-center">
             <Img
-              className="w-10 h-10 rounded-full mr-4"
+              className="w-10 h-10 rounded-full mr-3"
               alt={`Avatar of ${author.name}`}
               fluid={author.image.asset.fluid}
             />
             <div className="text-sm">
-              <p className="text-gray-900 leading-none">{author.name}</p>
-              <p className="text-gray-600">{publishedAt}</p>
+              <p className="text-gray-900 leading-none mb-1">{author.name}</p>
+              <p className="text-gray-600 leading-none">
+                {format(publishedAt, "MMMM YYYY")}
+              </p>
             </div>
           </div>
         </div>

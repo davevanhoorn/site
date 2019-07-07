@@ -1,4 +1,13 @@
 module.exports = {
+  siteMetadata: {
+    title: "Dave van Hoorn",
+    titleTemplate: "%s · Front-End Developer",
+    description:
+      "front-end developer, surf, mountainbiking, outdoors, my doggie, 030 represent",
+    url: "https://davevanhoorn.com",
+    twitterUsername: "@davevanhoorn",
+    image: "/src/images/dave.jpg",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,

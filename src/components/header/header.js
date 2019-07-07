@@ -6,7 +6,7 @@ const Header = props => {
   return (
     <header className="flex justify-between items-center pt-4 mb-10">
       <Logo />
-      <Navigation />
+      {/* <Navigation /> */}
     </header>
   )
 }

@@ -1,5 +1,4 @@
 export function mapEdgesToNodes(data) {
-  console.log(data)
   if (!data.edges) return []
   return data.edges.map(edge => edge.node)
 }

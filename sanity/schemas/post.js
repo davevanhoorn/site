@@ -50,7 +50,14 @@ export default {
     {
       name: "excerpt",
       title: "Excerpt",
-      type: "text",
+      type: "string",
+      options: {
+        rows: 2,
+      },
+      validation: Rule =>
+        Rule.required()
+          .min(10)
+          .max(96),
     },
   ],
 

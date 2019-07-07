@@ -5,7 +5,8 @@ import { Helmet } from "react-helmet"
 const Contact = () => (
   <Layout>
     <Helmet>
-      <title>Contact Dave van Hoorn</title>
+      <title>Contact</title>
+      <meta name="robots" content="noindex, follow" />
     </Helmet>
     <div>Contact</div>
   </Layout>

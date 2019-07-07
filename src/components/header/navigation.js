@@ -1,30 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "gatsby"
 
-const Navigation = (props: any) => {
+const Navigation = props => {
   // Create navigation menu items
   let navigationMenu = [
     {
       title: "Blog",
-      path: "/blog",
-      class: ""
+      path: "/",
+      class: "",
     },
     {
       title: "About",
       path: "/about",
-      class: ""
+      class: "",
     },
     {
       title: "Contact",
       path: "/contact",
-      class: ""
-    }
-  ];
+      class: "",
+    },
+  ]
 
   // Add class name "navigation__link" to each item in the object
-  navigationMenu.map(item =>
-    Object.assign(item, { class: "navigation__link" })
-  );
+  navigationMenu.map(item => Object.assign(item, { class: "navigation__link" }))
 
   return (
     <div>
@@ -35,8 +33,8 @@ const Navigation = (props: any) => {
         <nav>
           {navigationMenu.map(item => (
             <Link
-              className={`${item.class} ${item.class +
-                (props.location === item.path ? "--active" : "")}`}
+              className={`${item.class}`}
+              activeClassName={`${item.class}--active`}
               to={item.path}
               title={item.title}
               key={item.title}
@@ -47,7 +45,7 @@ const Navigation = (props: any) => {
         </nav>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

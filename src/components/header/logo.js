@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Logo = () => (
   <div>
@@ -9,6 +9,6 @@ const Logo = () => (
       Front-End Developer @ Capgemini
     </span>
   </div>
-);
+)
 
-export default Logo;
+export default Logo

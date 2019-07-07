@@ -9,5 +9,8 @@
 .navigation__link--active {
 	@apply .text-gray-800;
 }
+.navigation__link:last-of-type {
+	padding-right: 0 !important;
+}
 
 @tailwind utilities;

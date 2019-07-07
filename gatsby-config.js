@@ -1,13 +1,14 @@
 module.exports = {
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        develop: true,
+        develop: false,
         tailwind: true,
         printRejected: true,
-        whitelist: [`navigation__link--active`],
+        whitelist: [`navigation__link--active`, `a`],
       },
     },
     {
@@ -23,6 +24,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
   ],
 }

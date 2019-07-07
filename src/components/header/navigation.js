@@ -10,13 +10,8 @@ const Navigation = props => {
       class: "",
     },
     {
-      title: "About",
-      path: "/about",
-      class: "",
-    },
-    {
       title: "Contact",
-      path: "/contact",
+      path: "/contact/",
       class: "",
     },
   ]

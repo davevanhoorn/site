@@ -52,7 +52,7 @@ const PostCard = props => {
             />
             <div className="text-sm">
               <p className="text-gray-900 leading-none mb-1">{author.name}</p>
-              <p className="text-gray-800 leading-none">
+              <p className="text-gray-700 leading-none">
                 {format(publishedAt, "MMMM YYYY")}
               </p>
             </div>

@@ -50,6 +50,7 @@ const Blog = props => {
   return (
     <Layout>
       <Helmet>
+        <html lang="nl" />
         <title>Front-End Development Tips & Tricks 💯| Dave van Hoorn</title>
         <meta
           name="description"

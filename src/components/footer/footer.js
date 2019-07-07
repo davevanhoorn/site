@@ -1,7 +1,7 @@
 import React from "react"
 
 const Footer = () => (
-  <footer className="pt-1 pb-6 text-center text-xs text-gray-800">
+  <footer className="pt-1 pb-6 text-center text-xs text-gray-700">
     <span className="ml-1 block" role="img" aria-label="Heart">
       ❤️
     </span>

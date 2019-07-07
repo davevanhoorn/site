@@ -1,7 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
+import { format } from "date-fns"
 
-const Post = props => {
+const PostCard = props => {
   const {
     title,
     excerpt,
@@ -9,11 +11,15 @@ const Post = props => {
     author,
     publishedAt,
     mainImage,
+    slug,
   } = props.data
 
   return (
     <article className="flex mt-6 mb-12">
-      <div className="mx-auto max-w-sm w-full lg:max-w-full lg:flex">
+      <Link
+        to={`/${format(publishedAt, "YYYY/MM")}/${slug.current}/`}
+        className="mx-auto max-w-sm w-full lg:max-w-full lg:flex"
+      >
         <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
           <Img
             className="object-cover w-full h-full"
@@ -50,9 +56,9 @@ const Post = props => {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </article>
   )
 }
 
-export default Post
+export default PostCard

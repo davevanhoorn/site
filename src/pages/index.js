@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
-import Post from "../components/blog/post"
+import PostCard from "../components/blog/postCard"
 import { graphql } from "gatsby"
 import { mapEdgesToNodes } from "../lib/helpers"
 
@@ -10,7 +10,7 @@ export const query = graphql`
     posts: allSanityPost {
       edges {
         node {
-          _id
+          id
           title
           publishedAt(formatString: "DD-MM-YYYY")
           excerpt
@@ -35,6 +35,9 @@ export const query = graphql`
               }
             }
           }
+          slug {
+            current
+          }
         }
       }
     }
@@ -55,7 +58,7 @@ const Blog = props => {
       </Helmet>
       <section>
         {postNodes.map(post => (
-          <Post data={post} key={post._id} />
+          <PostCard data={post} key={post.id} />
         ))}
       </section>
     </Layout>

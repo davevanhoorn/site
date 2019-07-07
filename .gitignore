@@ -1,3 +1,6 @@
+# Sanity
+sanity/dist/
+
 # Logs
 logs
 *.log

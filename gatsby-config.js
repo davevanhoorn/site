@@ -23,6 +23,13 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `davevanhoorn`,
+        dataset: `production`,
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

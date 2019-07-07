@@ -29,7 +29,7 @@ const PostCard = props => {
         </div>
         <div className="flex-grow border-r border-b border-l border-gray-300 lg:border-l-0 lg:border-t lg:border-gray-300 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div className="mb-3">
-            <div className="text-gray-800 font-semibold text-2xl mb-2 ">
+            <div className="text-gray-800 font-semibold text-xl mb-2 ">
               {title}
             </div>
             <p className="text-gray-700 text-base">{excerpt}</p>

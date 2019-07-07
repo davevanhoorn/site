@@ -3,7 +3,7 @@
 
 /* Navigation */
 .navigation__link {
-	@apply .text-gray-500 .px-4;
+	@apply .text-gray-500 .px-2;
 }
 .navigation__link:hover,
 .navigation__link--active {

@@ -34,11 +34,19 @@ const serializers = {
           )
 
         default:
-          return (
-            <p className="py-3 leading-relaxed text-gray-700">
-              {props.children}
-            </p>
-          )
+          if (
+            Array.isArray(props.children) &&
+            props.children[0] &&
+            typeof props.children[0] === "object"
+          ) {
+            return <pre>{props.children}</pre>
+          } else {
+            return (
+              <p className="py-3 leading-relaxed text-gray-700 text-lg">
+                {props.children}
+              </p>
+            )
+          }
       }
     },
   },

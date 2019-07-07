@@ -20,16 +20,6 @@ export const query = graphql`
   }
 `
 
-const serializers = {
-  types: {
-    code: props => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-}
-
 const PostSingle = props => {
   const { title, _rawBody } = props.data.post
   return (
@@ -40,9 +30,7 @@ const PostSingle = props => {
             {title}
           </h1>
         </header>
-        {_rawBody && (
-          <BlockContent blocks={_rawBody} serializers={serializers} />
-        )}
+        {_rawBody && <BlockContent blocks={_rawBody} />}
       </article>
     </Layout>
   )

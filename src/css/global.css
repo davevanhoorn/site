@@ -13,4 +13,9 @@
 	padding-right: 0 !important;
 }
 
+/* Code Block */
+.syntax-highlighter-custom code:first-of-type {
+	color: rgba(255,255,255,.25) !important;
+}
+
 @tailwind utilities;

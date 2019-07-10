@@ -3,11 +3,13 @@ import Layout from "../layout"
 import { graphql } from "gatsby"
 import BlockContent from "../block-content"
 import SEO from "../SEO"
+import { format } from "date-fns"
 
 export const query = graphql`
   query BlogPostQuery($id: String!) {
     post: sanityPost(id: { eq: $id }) {
       id
+      publishedAt
       title
       excerpt
       slug {
@@ -30,14 +32,21 @@ export const query = graphql`
 `
 
 const PostSingle = props => {
-  const { title, excerpt, mainImage, slug, _rawBody } = props.data.post
+  const {
+    title,
+    excerpt,
+    mainImage,
+    publishedAt,
+    slug,
+    _rawBody,
+  } = props.data.post
   return (
     <Layout>
       <SEO
         title={title}
         description={excerpt || ""}
         image={mainImage.asset.fluid.src}
-        pathname={slug.current}
+        pathname={format(publishedAt, "YYYY/MM") + "/" + slug.current + "/"}
         article
       />
       <article className="pb-12">

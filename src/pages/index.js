@@ -51,11 +51,7 @@ const Blog = props => {
     <Layout>
       <Helmet>
         <html lang="nl" />
-        <title>Front-End Development Tips & Tricks 💯| Dave van Hoorn</title>
-        <meta
-          name="description"
-          content="Personal Front-End Development tips, tricks and stories from Dave van Hoorn, developer at Capgemini Netherlands."
-        />
+        <title>Dave van Hoorn • Front-End Developer bij Capgemini</title>
       </Helmet>
       <section>
         {postNodes.map(post => (

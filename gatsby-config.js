@@ -24,10 +24,8 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Dave van Hoorn`,
-        short_name: `DvH`,
+        short_name: `davevanhoorn.com`,
         start_url: `/`,
-        background_color: `#4fd1c5`,
-        theme_color: `#4fd1c5`,
         display: `standalone`,
         icon: `src/images/icon.png`,
       },

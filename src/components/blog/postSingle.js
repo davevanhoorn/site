@@ -17,7 +17,7 @@ export const query = graphql`
       }
       mainImage {
         asset {
-          fluid(maxWidth: 576) {
+          fluid(maxWidth: 1200) {
             ...GatsbySanityImageFluid
           }
         }
@@ -27,6 +27,15 @@ export const query = graphql`
         title
       }
       _rawBody
+    }
+    media: sanityPost(id: { eq: $id }) {
+      mainImage {
+        asset {
+          fluid(maxWidth: 1200) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `
@@ -45,7 +54,7 @@ const PostSingle = props => {
       <SEO
         title={title}
         description={excerpt || ""}
-        image={mainImage.asset.fluid.src}
+        image={props.data.media.mainImage.asset.fluid.src}
         pathname={format(publishedAt, "YYYY/MM") + "/" + slug.current + "/"}
         article
       />

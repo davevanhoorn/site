@@ -1,9 +1,9 @@
+import { graphql, StaticQuery } from "gatsby"
+import PropTypes from "prop-types"
 import React from "react"
 import { Helmet } from "react-helmet"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, pathname, article }) => (
+const SEO = ({ title, description, image, pathname, article, author }) => (
   <StaticQuery
     query={query}
     render={({
@@ -24,7 +24,6 @@ const SEO = ({ title, description, image, pathname, article }) => (
         image: `${image || defaultImage}`,
         url: `${siteUrl}/${pathname || "/"}`,
       }
-
       return (
         <>
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -47,6 +46,9 @@ const SEO = ({ title, description, image, pathname, article }) => (
             {seo.title && <meta name="twitter:title" content={seo.title} />}
             {seo.description && (
               <meta name="twitter:description" content={seo.description} />
+            )}
+            {author && author.name && (
+              <meta name="author" content={author.name} />
             )}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
           </Helmet>

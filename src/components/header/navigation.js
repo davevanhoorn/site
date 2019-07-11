@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 
 const Navigation = props => {
   // Create navigation menu items
@@ -9,11 +9,6 @@ const Navigation = props => {
       path: "/",
       class: "",
     },
-    // {
-    //   title: "Contact",
-    //   path: "/contact/",
-    //   class: "",
-    // },
   ]
 
   // Add class name "navigation__link" to each item in the object

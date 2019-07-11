@@ -5,6 +5,7 @@ import React from "react"
 import BlockContent from "../block-content"
 import Layout from "../layout"
 import SEO from "../SEO"
+import { DiscussionEmbed } from "disqus-react"
 
 export const query = graphql`
   query BlogPostQuery($id: String!) {
@@ -46,6 +47,7 @@ export const query = graphql`
 
 const PostSingle = props => {
   const {
+    id,
     title,
     excerpt,
     publishedAt,
@@ -53,6 +55,13 @@ const PostSingle = props => {
     _rawBody,
     author,
   } = props.data.post
+
+  const disqusShortname = "dave-van-hoorn"
+  const disqusConfig = {
+    identifier: id,
+    title: title,
+  }
+
   return (
     <Layout>
       <SEO
@@ -76,6 +85,12 @@ const PostSingle = props => {
           </h1>
         </header>
         {_rawBody && <BlockContent blocks={_rawBody} />}
+        <section>
+          <p className="mt-10 mb-10 text-center text-3xl lg:text-4xl text-gray-800 font-semibold mt-4 leading-tight">
+            Vragen?
+          </p>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </section>
       </article>
     </Layout>
   )

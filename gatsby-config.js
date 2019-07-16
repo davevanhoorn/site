@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Dave van Hoorn",
-    titleTemplate: "%s · Front-End Developer",
+    titleTemplate: "%s - Front-End Daveloper",
     description:
       "front-end developer, surf, mountainbiking, outdoors, my doggie, 030 represent",
     url: "https://davevanhoorn.com",

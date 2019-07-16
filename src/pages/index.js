@@ -51,7 +51,7 @@ const Blog = props => {
     <Layout>
       <Helmet>
         <html lang="nl" />
-        <title>Dave van Hoorn • Front-End Developer bij Capgemini</title>
+        <title>Dave van Hoorn - Front-End Daveloper bij Capgemini</title>
       </Helmet>
       <section>
         {postNodes.map(post => (

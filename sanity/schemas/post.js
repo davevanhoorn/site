@@ -57,7 +57,7 @@ export default {
       validation: Rule =>
         Rule.required()
           .min(10)
-          .max(96),
+          .max(120),
     },
   ],
 

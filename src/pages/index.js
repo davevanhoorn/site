@@ -12,7 +12,7 @@ export const query = graphql`
         node {
           id
           title
-          publishedAt(formatString: "DD-MM-YYYY")
+          publishedAt
           excerpt
           author {
             name

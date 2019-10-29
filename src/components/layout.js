@@ -4,10 +4,12 @@ import Header from "../components/header/header"
 
 export default ({ children }) => {
   return (
-    <div className="container max-w-2xl">
-      <Header />
-      {children}
+    <>
+      <div className="container max-w-2xl">
+        <Header />
+        {children}
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }

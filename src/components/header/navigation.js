@@ -7,12 +7,24 @@ const Navigation = props => {
     {
       title: "Blog",
       path: "/",
-      class: "",
+      class: "navigation__link",
+    },
+    // {
+    //   title: "Projects",
+    //   path: "/projects",
+    //   class: "",
+    // },
+    {
+      title: "CV",
+      path: "/cv",
+      class: "navigation__link",
+    },
+    {
+      title: "About",
+      path: "/about",
+      class: "navigation__link",
     },
   ]
-
-  // Add class name "navigation__link" to each item in the object
-  navigationMenu.map(item => Object.assign(item, { class: "navigation__link" }))
 
   return (
     <nav>

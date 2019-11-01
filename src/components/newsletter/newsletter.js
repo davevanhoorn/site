@@ -13,33 +13,37 @@ const Newsletter = () => {
         .email("Invalid email addresss")
         .required("Required"),
     }),
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: (values, actions) => {
+      console.log("set to true")
+      actions.setSubmitting(true)
+      setTimeout(() => {
+        console.log("set to false")
+        actions.setSubmitting(false)
+      }, 1000)
     },
   })
 
   return (
     <div className="container max-w-2xl flex mb-8 text-gray-700">
-      <div className="bg-white w-1/2 p-6 rounded-lg shadow-lg">
+      <div className="bg-white w-full p-6 rounded-lg shadow-lg sm:w-1/2">
         <h1 className="font-semibold text-xl mb-2">
-          Meer weten?
+          Op de hoogte blijven?
           <span className="ml-2" role="img" aria-label="Fire">
             🤯
           </span>
         </h1>
-        <p className="text-base">
-          Leer ook programmeren, Leer ook programmeren Leer ook programmeren,
-          Leer ook programmeren Leer ook programmeren
+        <p className="text-base mb-3">
+          Meld je aan voor mijn nieuwsbrief en blijf op de hoogte over React
+          development, leven als freelancer en het bootstrappen van winstgevende
+          online bedrijven
         </p>
-        <br />
         <Formik>
           <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="email">Email Address</label>
             <input
               name="email"
-              className="mt-1 text-base text-gray-700 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-3 block w-full appearance-none leading-normal"
+              className="text-base text-gray-700 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-3 block w-full appearance-none leading-normal"
               type="email"
-              placeholder="jane@example.com"
+              placeholder="Vul hier jouw email adres in"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}

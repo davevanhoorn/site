@@ -51,7 +51,7 @@ const Blog = props => {
     <Layout>
       <Helmet>
         <html lang="nl" />
-        <title>Dave van Hoorn - Front-End Daveloper bij Capgemini</title>
+        <title>React Front-End Developer → Dave van Hoorn</title>
       </Helmet>
       <section>
         {postNodes.map(post => (

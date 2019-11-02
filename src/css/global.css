@@ -1,21 +1,30 @@
 @tailwind base;
 @tailwind components;
 
+p a {
+  @apply .text-red-500;
+  text-decoration: underline;
+}
+
+p a:hover {
+  @apply .text-red-700;
+}
+
 /* Navigation */
 .navigation__link {
-	@apply .text-gray-500 .px-2;
+  @apply .text-gray-500 .px-2;
 }
 .navigation__link:hover,
 .navigation__link--active {
-	@apply .text-gray-800;
+  @apply .text-gray-800;
 }
 .navigation__link:last-of-type {
-	padding-right: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Code Block */
 .syntax-highlighter-custom code:first-of-type {
-	color: rgba(255,255,255,.25) !important;
+  color: rgba(255, 255, 255, 0.25) !important;
 }
 
 @tailwind utilities;

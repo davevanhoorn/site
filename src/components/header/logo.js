@@ -7,7 +7,7 @@ const Logo = () => (
       Dave van Hoorn
     </h6>
     <span className="text-xs text-gray-700 font-semibold">
-      Front-End Developer @ Capgemini
+      Front-End Developer
     </span>
   </Link>
 )

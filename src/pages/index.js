@@ -7,7 +7,7 @@ import { mapEdgesToNodes } from "../lib/helpers"
 
 export const query = graphql`
   query postQuery {
-    posts: allSanityPost {
+    posts: allSanityPost(sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           id

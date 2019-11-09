@@ -6,7 +6,7 @@ import axios from "axios"
 
 const formHandler = email =>
   axios({
-    method: "post",
+    method: "POST",
     url: "/.netlify/functions/mailchimp-signup",
     data: {
       email: email,

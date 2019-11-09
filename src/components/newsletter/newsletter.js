@@ -2,6 +2,16 @@ import React from "react"
 import { Formik, useFormik } from "formik"
 import * as Yup from "yup"
 import classNames from "classnames"
+import axios from "axios"
+
+const formHandler = email =>
+  axios({
+    method: "post",
+    url: "/.netlify/functions/mailchimp-signup",
+    data: {
+      email: email,
+    },
+  })
 
 const Newsletter = () => {
   const formik = useFormik({
@@ -10,16 +20,22 @@ const Newsletter = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email("Invalid email addresss")
-        .required("Required"),
+        .email("Ongeldige email :(")
+        .required("Dit veld is verplicht"),
     }),
     onSubmit: (values, actions) => {
-      console.log("set to true")
       actions.setSubmitting(true)
-      setTimeout(() => {
-        console.log("set to false")
-        actions.setSubmitting(false)
-      }, 1000)
+      formHandler(values.email)
+        .then(() => {
+          // Set local state
+          console.log("Signed up")
+          actions.setSubmitting(false)
+        })
+        .catch(e => {
+          // Set local state
+          console.log("Didnt sign up")
+          actions.setSubmitting(false)
+        })
     },
   })
 
@@ -48,9 +64,9 @@ const Newsletter = () => {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? (
+            {/* {formik.touched.email && formik.errors.email ? (
               <div className="mt-1 text-red-500">{formik.errors.email}</div>
-            ) : null}
+            ) : null} */}
             <button
               type="submit"
               className={classNames(

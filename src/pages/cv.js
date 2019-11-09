@@ -8,6 +8,10 @@ const Blog = () => (
     <Helmet>
       <html lang="nl" />
       <title>React Front-End Developer → Dave van Hoorn → CV</title>
+      <meta
+        name="description"
+        content="Ik werk als Front-End Developer voor o.a. Euroclear, Capgemini, Schiphol en New Skool Media."
+      />
     </Helmet>
 
     <section className="text-gray-800">

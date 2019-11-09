@@ -9,6 +9,10 @@ const Blog = () => (
     <Helmet>
       <html lang="nl" />
       <title>Contact</title>
+      <meta
+        name="description"
+        content="Ik ben Dave, een positief ingestelde Front-End Developer (uit '89). Ik maak mooie én gebruiksvriendelijke websites."
+      />
     </Helmet>
     <section className="md:flex text-gray-800 pb-10 items-center">
       <figure className="md:w-1/2 px-6 w-full mb-4 sm:mb-0">

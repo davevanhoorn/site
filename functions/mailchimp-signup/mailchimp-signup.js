@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 
 exports.handler = function(event, context, callback) {
-  const emailAddress = event.queryStringParameters.emailAddress
+  const emailAddress = event.queryStringParameters.email
   const apiKey = `apikey ${process.env.MAILCHIMP_API_KEY}`
   const listId = process.env.MAILCHIMP_LIST_ID
 

@@ -1,50 +1,47 @@
 module.exports = {
   siteMetadata: {
     title: "Dave van Hoorn",
-    titleTemplate: "%s - Front-End Daveloper",
-    description:
-      "front-end developer, surf, mountainbiking, outdoors, my doggie, 030 represent",
+    titleTemplate: "%s - Dave van Hoorn",
+    description: "Front-end developer @ Utrecht, NL",
     url: "https://davevanhoorn.com",
     twitterUsername: "@davevanhoorn",
-    image: "/src/images/dave.jpg",
+    image: "src/assets/images/dave.jpg",
+    author: "Dave van Hoorn",
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
+    // `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-plugin-purgecss`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        develop: false,
-        tailwind: true,
-        printRejected: true,
-        whitelist: [`navigation__link--active`, `a`],
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Dave van Hoorn`,
-        short_name: `davevanhoorn.com`,
+        name: `dave-van-hoorn`,
+        short_name: `Dave`,
         start_url: `/`,
-        display: `standalone`,
-        icon: `src/images/icon.png`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
     {
-      resolve: `gatsby-source-sanity`,
+      resolve: "gatsby-source-sanity",
       options: {
-        projectId: `ejaqflao`,
-        dataset: `production`,
+        projectId: "ejaqflao",
+        dataset: "production",
       },
     },
-    `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-MWKWKRX",
-        includeInDevelopment: false,
-        defaultDataLayer: { platform: "gatsby" },
-      },
-    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }

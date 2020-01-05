@@ -1,0 +1,31 @@
+.postFigure {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.postFigure img {
+  width: 100%;
+  height: auto;
+}
+
+.postFigCaption {
+  font-size: small;
+  font-weight: 700;
+  text-align: center;
+}
+
+.postSyntax {
+  line-height: 1.5;
+  border: none !important;
+}
+
+.postSyntax {
+  background-color: black !important;
+}
+
+/* Code Block */
+.postSyntax code:first-of-type {
+  color: rgba(255, 255, 255, 0.25) !important;
+}

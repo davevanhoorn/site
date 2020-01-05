@@ -22,16 +22,16 @@ async function createBlogPostPages(graphql, actions, reporter) {
 
   const postEdges = (result.data.allSanityPost || {}).edges || []
 
-  postEdges.forEach((edge, index) => {
+  postEdges.forEach(edge => {
     const { id, slug = {}, publishedAt } = edge.node
-    const dateSegment = format(publishedAt, "YYYY/MM")
-    const path = `/${dateSegment}/${slug.current}/`
+    const dateSegment = format(new Date(publishedAt), "yyyy/MM")
+    const path = `${dateSegment}/${slug.current}/`
 
     reporter.info(`Creating blog post page: ${path}`)
 
     createPage({
       path,
-      component: require.resolve("./src/components/blog/postSingle.js"),
+      component: require.resolve("./src/components/post/postSingle.tsx"),
       context: { id },
     })
   })

@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react"
 import Wrapper from "../components/atoms/wrapper"
 import SEO from "../components/atoms/seo"
 
-import CvWrapper from "../components/cv/CvWrapper"
+import CvWrapper from "../components/cv/cvWrapper"
 
 const IndexPage: FunctionComponent = () => {
   return (

@@ -9,6 +9,8 @@ type TSeoProps = {
   title: string
   description: string
   meta?: []
+  imageUrl?: any
+  postUrl?: string
 }
 
 type TStaticQuery = {
@@ -22,6 +24,8 @@ const SEO: FunctionComponent<TSeoProps> = ({
   title,
   description,
   meta = [],
+  imageUrl,
+  postUrl,
 }) => {
   const { site }: TStaticQuery = useStaticQuery(
     graphql`
@@ -31,6 +35,7 @@ const SEO: FunctionComponent<TSeoProps> = ({
             title
             description
             author
+            url
           }
         }
       }
@@ -39,6 +44,61 @@ const SEO: FunctionComponent<TSeoProps> = ({
 
   const metaDescription = description || site.siteMetadata.description
 
+  const metaTags = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      property: `og:site_name`,
+      content: `${site.siteMetadata.title} ${site.siteMetadata.description}`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: site.siteMetadata.author,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ].concat(meta)
+
+  if (imageUrl) {
+    metaTags.push({
+      name: `og:image`,
+      content: imageUrl,
+    })
+  }
+
+  if (postUrl) {
+    metaTags.push({
+      name: `og:url`,
+      content: `${site.siteMetadata.url}/${postUrl}`,
+    })
+  }
+
+  console.log(metaTags)
+
   return (
     <Helmet
       htmlAttributes={{
@@ -46,40 +106,7 @@ const SEO: FunctionComponent<TSeoProps> = ({
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={metaTags}
     />
   )
 }

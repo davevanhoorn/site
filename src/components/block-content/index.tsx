@@ -2,24 +2,16 @@ import BaseBlockContent from "@sanity/block-content-to-react"
 import React from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism"
-import imageUrlBuilder from "@sanity/image-url"
+
+import { urlFor } from "../../helpers/helpers"
 
 import styles from "./index.module.css"
-
-const builder = imageUrlBuilder({
-  projectId: "ejaqflao",
-  dataset: "production",
-})
-
-const urlFor = (source: string) => {
-  return builder.image(source)
-}
-
 const serializers = {
   list: ({ children }: { children: any }) => <ul>{children}</ul>,
   types: {
     image: ({ node = {} }) => {
       const { asset, caption } = node
+      console.log(asset)
       return (
         <figure className={styles.postFigure}>
           <img

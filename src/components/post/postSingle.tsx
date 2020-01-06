@@ -64,6 +64,7 @@ type TPostSingle = {
 
 const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
   const { id, title, excerpt, publishedAt, _rawBody, slug } = data.post
+  const { mainImage } = data.media
 
   const disqusShortname = "dave-van-hoorn"
   const disqusConfig: { url: string; identifier: string; title: string } = {
@@ -74,7 +75,12 @@ const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
 
   return (
     <Wrapper>
-      <SEO title={title} description={excerpt} />
+      <SEO
+        title={title}
+        description={excerpt}
+        imageUrl={mainImage.asset.fluid.src}
+        postUrl={getBlogUrl(publishedAt, slug.current)}
+      />
       <article className={styles.wrapper}>
         <header>
           <h1>{title}</h1>

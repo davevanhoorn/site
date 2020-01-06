@@ -25,7 +25,7 @@ h1,
   font-size: 1.7222222rem;
   line-height: 2.3rem;
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 h2,
 .h2 {
@@ -118,7 +118,7 @@ sub {
   .h2 {
     font-size: 1.7894737rem;
     line-height: 3.2631579rem;
-    margin-top: 2.44736835rem;
+    margin-top: 2.04736835rem;
     margin-bottom: 0.81578945rem;
   }
 
@@ -126,7 +126,7 @@ sub {
   .h3 {
     font-size: 1.3157895rem;
     line-height: 1.6315789rem;
-    margin-top: 2.44736835rem;
+    margin-top: 2.04736835rem;
     margin-bottom: 1.6315789rem;
   }
 

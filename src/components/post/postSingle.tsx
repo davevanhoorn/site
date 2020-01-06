@@ -30,15 +30,6 @@ export const query = graphql`
       }
       _rawBody
     }
-    media: sanityPost(id: { eq: $id }) {
-      mainImage {
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-    }
   }
 `
 
@@ -58,15 +49,19 @@ type TPostSingle = {
       mainImage: any /* ToDo: Fix typings on this */
       _rawBody: any /* ToDo: Fix typings on this */
     }
-    media: any /* ToDo: Fix typings on this */
   }
 }
 
 const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
-  const { id, title, excerpt, publishedAt, _rawBody, slug } = data.post
-  const { mainImage } = data.media
-
-  console.log(mainImage.asset.fluid.src)
+  const {
+    id,
+    title,
+    excerpt,
+    publishedAt,
+    _rawBody,
+    slug,
+    mainImage,
+  } = data.post
 
   const disqusShortname = "dave-van-hoorn"
   const disqusConfig: { url: string; identifier: string; title: string } = {

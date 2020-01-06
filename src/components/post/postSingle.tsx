@@ -80,6 +80,8 @@ const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
         description={excerpt}
         imageUrl={mainImage.asset.fluid.src}
         postUrl={getBlogUrl(publishedAt, slug.current)}
+        publishedAt={publishedAt}
+        type={"article"}
       />
       <article className={styles.wrapper}>
         <header>

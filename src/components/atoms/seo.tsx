@@ -9,8 +9,10 @@ type TSeoProps = {
   title: string
   description: string
   meta?: []
-  imageUrl?: any
+  imageUrl?: string
   postUrl?: string
+  publishedAt?: string
+  type?: string
 }
 
 type TStaticQuery = {
@@ -26,6 +28,8 @@ const SEO: FunctionComponent<TSeoProps> = ({
   meta = [],
   imageUrl,
   postUrl,
+  publishedAt,
+  type,
 }) => {
   const { site }: TStaticQuery = useStaticQuery(
     graphql`
@@ -50,6 +54,10 @@ const SEO: FunctionComponent<TSeoProps> = ({
       content: metaDescription,
     },
     {
+      name: `author`,
+      content: site.siteMetadata.author,
+    },
+    {
       property: `og:title`,
       content: title,
     },
@@ -59,7 +67,7 @@ const SEO: FunctionComponent<TSeoProps> = ({
     },
     {
       property: `og:type`,
-      content: `website`,
+      content: type ? type : `website`,
     },
     {
       property: `og:site_name`,
@@ -85,15 +93,22 @@ const SEO: FunctionComponent<TSeoProps> = ({
 
   if (imageUrl) {
     metaTags.push({
-      name: `og:image`,
-      content: imageUrl,
+      property: `og:image`,
+      content: `image`,
     })
   }
 
   if (postUrl) {
     metaTags.push({
-      name: `og:url`,
+      property: `og:url`,
       content: `${site.siteMetadata.url}/${postUrl}`,
+    })
+  }
+
+  if (publishedAt) {
+    metaTags.push({
+      property: `article:published_time`,
+      content: publishedAt,
     })
   }
 

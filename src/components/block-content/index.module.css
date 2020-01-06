@@ -19,9 +19,7 @@
 .postSyntax {
   line-height: 1.5;
   border: none !important;
-}
-
-.postSyntax {
+  margin-bottom: 1.6315789rem;
   background-color: black !important;
 }
 

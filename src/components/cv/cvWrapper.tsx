@@ -215,7 +215,7 @@ const CvWrapper: FunctionComponent = () => {
             </tbody>
           </table>
           <button className={styles.introContactButton}>
-            I'm available for work
+            I'm not available for new work
           </button>
         </div>
         <div className={styles.introImageWrapper}>

@@ -9,8 +9,8 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Wrapper>
       <SEO
-        title="C.V."
-        description="C.V. of freelance React and TypeScript developer. Aavailable for work."
+        title="Personal details and work experience"
+        description="C.V. of freelance React and TypeScript developer in Utrecht, the Netherlands"
       />
       <CvWrapper />
     </Wrapper>

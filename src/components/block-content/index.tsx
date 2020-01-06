@@ -11,7 +11,6 @@ const serializers = {
   types: {
     image: ({ node = {} }) => {
       const { asset, caption } = node
-      console.log(asset)
       return (
         <figure className={styles.postFigure}>
           <img

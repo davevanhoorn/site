@@ -112,8 +112,6 @@ const SEO: FunctionComponent<TSeoProps> = ({
     })
   }
 
-  console.log(metaTags)
-
   return (
     <Helmet
       htmlAttributes={{

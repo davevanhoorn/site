@@ -94,7 +94,7 @@ const SEO: FunctionComponent<TSeoProps> = ({
   if (imageUrl) {
     metaTags.push({
       property: `og:image`,
-      content: `image`,
+      content: imageUrl,
     })
   }
 

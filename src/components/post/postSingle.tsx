@@ -66,6 +66,8 @@ const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
   const { id, title, excerpt, publishedAt, _rawBody, slug } = data.post
   const { mainImage } = data.media
 
+  console.log(mainImage.asset.fluid.src)
+
   const disqusShortname = "dave-van-hoorn"
   const disqusConfig: { url: string; identifier: string; title: string } = {
     url: getBlogUrl(publishedAt, slug.current),

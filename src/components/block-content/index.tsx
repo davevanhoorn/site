@@ -28,7 +28,6 @@ const serializers = {
     },
     code: ({ node }: { node: any }) => {
       const { code, language } = node
-      console.log("node", node)
       let highlightedLines: number[] = []
       if (!code) {
         return null

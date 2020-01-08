@@ -16,7 +16,10 @@ type TIndexPageProps = {
 
 export const query = graphql`
   query MyQuery {
-    posts: allSanityPost(filter: { slug: { current: { ne: null } } }) {
+    posts: allSanityPost(
+      sort: { fields: publishedAt, order: DESC }
+      filter: { mainImage: { _key: {}, _type: { eq: "image" } } }
+    ) {
       edges {
         node {
           id

@@ -9,9 +9,9 @@ html {
 }
 
 body {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.25rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -20,4 +20,9 @@ body {
     padding-right: 2rem;
     padding-top: 2rem;
   }
+}
+
+code span.greyscale,
+code span.greyscale span {
+  color: rgba(255, 255, 255, 0.25) !important;
 }

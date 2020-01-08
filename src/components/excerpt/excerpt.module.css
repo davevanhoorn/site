@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  max-width: 968px;
+  max-width: 768px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -11,19 +11,12 @@
   text-decoration: none;
 }
 
-.article:hover {
-  cursor: pointer;
+.article {
+  margin-bottom: 3rem;
 }
 
-@media only screen and (min-width: 768px) {
-  .article:hover .title::after {
-    color: white;
-    content: "→";
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    margin-left: 0.5rem;
-  }
+.article:hover {
+  cursor: pointer;
 }
 
 .article:last-of-type {
@@ -37,7 +30,7 @@
 
 @media only screen and (min-width: 768px) {
   .title {
-    line-height: 2.3684211rem;
+    line-height: 1.684211rem;
   }
 }
 

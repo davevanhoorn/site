@@ -1,6 +1,7 @@
 import BaseBlockContent from "@sanity/block-content-to-react"
 import React from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import lineTagPropsFunction from "react-syntax-highlighter"
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 import { urlFor } from "../../helpers/helpers"
@@ -9,7 +10,7 @@ import styles from "./index.module.css"
 const serializers = {
   list: ({ children }: { children: any }) => <ul>{children}</ul>,
   types: {
-    image: ({ node = {} }) => {
+    image: ({ node }: { node: any }) => {
       const { asset, caption } = node
       return (
         <figure className={styles.postFigure}>
@@ -25,10 +26,14 @@ const serializers = {
         </figure>
       )
     },
-    code: ({ node = {} }) => {
+    code: ({ node }: { node: any }) => {
       const { code, language } = node
+      let highlightedLines: number[] = []
       if (!code) {
         return null
+      }
+      if (node.highlightedLines) {
+        highlightedLines = node.highlightedLines
       }
       return (
         <SyntaxHighlighter
@@ -36,6 +41,13 @@ const serializers = {
           style={xonokai}
           language={language}
           className={styles.postSyntax}
+          wrapLines={true}
+          lineProps={(lineNumber: number) => ({
+            className:
+              highlightedLines.length && !highlightedLines.includes(lineNumber)
+                ? "greyscale"
+                : "",
+          })}
         >
           {code}
         </SyntaxHighlighter>

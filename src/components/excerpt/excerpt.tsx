@@ -19,7 +19,7 @@ const Excerpt: FunctionComponent<TExcerptProps> = ({
 }) => (
   <div className={styles.article}>
     <Link className={styles.link} to={getBlogUrl(publishedAt, slug)}>
-      <h2 className={styles.title}>{title}</h2>
+      <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{excerpt}</p>
     </Link>
   </div>

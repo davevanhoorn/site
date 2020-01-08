@@ -39,7 +39,7 @@ const Navigation: FunctionComponent = () => {
   `)
 
   const menu = [
-    { to: "/", title: "Blog" },
+    { to: "/", title: "Home" },
     { to: "/cv", title: "C.V." },
   ]
 

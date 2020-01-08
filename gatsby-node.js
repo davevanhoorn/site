@@ -15,10 +15,6 @@ async function createBlogPostPages(graphql, actions, reporter) {
             slug {
               current
             }
-            mainImage {
-              _key
-              _type
-            }
           }
         }
       }

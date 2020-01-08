@@ -1,8 +1,14 @@
 export default {
   name: "post",
-  title: "Post",
+  title: "Posts",
   type: "document",
   fields: [
+    {
+      name: "language",
+      title: "Language",
+      type: "reference",
+      to: { type: "language" },
+    },
     {
       name: "title",
       title: "Title",
@@ -60,18 +66,4 @@ export default {
           .max(120),
     },
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
-    },
-  },
 }

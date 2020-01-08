@@ -55,10 +55,6 @@ export default {
     {
       type: "code",
       title: "Code",
-      options: {
-        language: "js",
-        languageAlternatives: ["jsx", "tsx", "css", "html"],
-      },
     },
   ],
 }

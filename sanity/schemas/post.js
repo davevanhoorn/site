@@ -4,6 +4,11 @@ export default {
   type: "document",
   fields: [
     {
+      title: "Finished",
+      name: "finished",
+      type: "boolean",
+    },
+    {
       name: "language",
       title: "Language",
       type: "reference",

@@ -26,3 +26,27 @@
 .postSyntax code:first-of-type {
   color: rgba(255, 255, 255, 0.25) !important;
 }
+
+.opacity80 {
+  opacity: 0.8;
+}
+
+.opacity60 {
+  opacity: 0.6;
+}
+
+.opacity40 {
+  opacity: 0.4;
+}
+
+.opacity20 {
+  opacity: 0.2;
+}
+
+.opacity10 {
+  opacity: 0.1;
+}
+
+.opacity05 {
+  opacity: 0.05;
+}

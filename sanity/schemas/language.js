@@ -1,7 +1,7 @@
 export default {
   name: "language",
   title: "Languages",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "slug",

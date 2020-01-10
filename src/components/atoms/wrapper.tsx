@@ -4,12 +4,14 @@ import "normalize.css"
 import "../../assets/css/global.css"
 import "../../assets/css/fonts.css"
 
-import Navigation from "../navigation/navigation"
+import Header from "../header/header"
+import Footer from "../footer/footer"
 
 const Wrapper: FunctionComponent = ({ children }) => (
   <>
-    <Navigation />
+    <Header />
     {children}
+    <Footer />
   </>
 )
 

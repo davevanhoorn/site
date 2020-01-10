@@ -20,12 +20,16 @@
 }
 
 .article:last-of-type {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .title {
   margin-bottom: 0.5rem;
   line-height: 1.9rem;
+}
+
+.title span {
+  margin-left: 0.5rem;
 }
 
 @media only screen and (min-width: 768px) {

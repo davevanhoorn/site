@@ -10,8 +10,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,7 +26,7 @@ module.exports = {
       options: {
         name: `dave-van-hoorn`,
         short_name: `Dave`,
-        start_url: `/`,
+        start_url: `https://davevanhoorn.com`,
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `minimal-ui`,
@@ -40,8 +40,7 @@ module.exports = {
         dataset: "production",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-no-javascript`,
   ],
 }

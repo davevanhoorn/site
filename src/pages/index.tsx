@@ -28,6 +28,9 @@ export const query = graphql`
           slug {
             current
           }
+          language {
+            slug
+          }
           publishedAt
         }
       }

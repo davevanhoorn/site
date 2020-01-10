@@ -9,6 +9,7 @@ type TExcerptProps = {
   excerpt: string
   slug: string
   publishedAt: string
+  language: string
 }
 
 const Excerpt: FunctionComponent<TExcerptProps> = ({
@@ -16,10 +17,14 @@ const Excerpt: FunctionComponent<TExcerptProps> = ({
   excerpt,
   slug,
   publishedAt,
+  language,
 }) => (
   <div className={styles.article}>
     <Link className={styles.link} to={getBlogUrl(publishedAt, slug)}>
-      <h3 className={styles.title}>{title}</h3>
+      <h3 className={styles.title}>
+        {title}
+        <span>{`${language === "nl" ? "🇳🇱" : "🇺🇸"}`}</span>
+      </h3>
       <p className={styles.description}>{excerpt}</p>
     </Link>
   </div>

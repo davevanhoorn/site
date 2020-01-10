@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react"
 import { graphql } from "gatsby"
-import { DiscussionEmbed } from "disqus-react"
 
 import BlockContent from "../block-content"
 import Wrapper from "../atoms/wrapper"
@@ -11,7 +10,10 @@ import { getBlogUrl } from "../../helpers/helpers"
 export const query = graphql`
   query BlogPostQuery($id: String!) {
     post: sanityPost(id: { eq: $id }) {
-      id
+      finished
+      language {
+        slug
+      }
       publishedAt
       title
       excerpt
@@ -23,7 +25,7 @@ export const query = graphql`
       }
       mainImage {
         asset {
-          fluid(maxWidth: 1200) {
+          fluid(maxWidth: 768) {
             ...GatsbySanityImageFluid
           }
         }
@@ -36,7 +38,10 @@ export const query = graphql`
 type TPostSingle = {
   data: {
     post: {
-      id: string
+      finished: boolean
+      language: {
+        slug: string
+      }
       publishedAt: string
       title: string
       excerpt: string
@@ -52,23 +57,25 @@ type TPostSingle = {
   }
 }
 
+const PostWarning: FunctionComponent<{ language: string }> = ({ language }) => (
+  <div className={styles.warning}>
+    {"en" === language
+      ? `This post is in progress. Sign up here to get notified when it's done.`
+      : `Dit artikel is nog niet klaar. Meld je hier aan voor mijn nieuwsbrief.`}
+  </div>
+)
+
 const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
   const {
-    id,
+    finished,
     title,
     excerpt,
     publishedAt,
     _rawBody,
     slug,
     mainImage,
+    language,
   } = data.post
-
-  const disqusShortname = "dave-van-hoorn"
-  const disqusConfig: { url: string; identifier: string; title: string } = {
-    url: getBlogUrl(publishedAt, slug.current),
-    identifier: id,
-    title: title,
-  }
 
   return (
     <Wrapper>
@@ -84,8 +91,9 @@ const PostSingle: FunctionComponent<TPostSingle> = ({ data }) => {
         <header>
           <h1>{title}</h1>
         </header>
-        {_rawBody && <BlockContent blocks={_rawBody} />}
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        {!finished ? <PostWarning language={language.slug} /> : null}
+        {_rawBody && <BlockContent finished={finished} blocks={_rawBody} />}
+        {!finished ? <PostWarning language={language.slug} /> : null}
       </article>
     </Wrapper>
   )

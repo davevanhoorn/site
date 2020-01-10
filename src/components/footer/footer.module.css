@@ -1,0 +1,15 @@
+.wrapper {
+  font-size: small;
+  line-height: 1.75;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: solid 1px rgba(0, 0, 0, 0.0625);
+}
+
+.wrapper img {
+  position: relative;
+  top: 0.125rem;
+  margin-right: 4px;
+  width: 11px;
+  height: 11px;
+}

@@ -1,22 +1,9 @@
 import React, { FunctionComponent } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
+import dave from "../../assets/images/profile.jpg"
 import styles from "./cvWrapper.module.css"
 
 const CvWrapper: FunctionComponent = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      profilePicture: file(relativePath: { eq: "profile.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   const roles = [
     {
       company: "Euroclear (for Capgemini)",
@@ -210,7 +197,7 @@ const CvWrapper: FunctionComponent = () => {
               </tr>
               <tr>
                 <td>Hobbies: </td>
-                <td>Mountainbike, surfing, drums, my doggo</td>
+                <td>Mountainbike, surfing, drums, walking my dog</td>
               </tr>
             </tbody>
           </table>
@@ -219,11 +206,7 @@ const CvWrapper: FunctionComponent = () => {
           </button>
         </div>
         <div className={styles.introImageWrapper}>
-          <Img
-            className={styles.thumbnail}
-            fluid={data.profilePicture.childImageSharp.fluid}
-            alt="Dave van Hoorn"
-          />
+          <img className={styles.thumbnail} src={dave} alt="Dave van Hoorn" />
         </div>
       </div>
       <h2 className={styles.experienceTitle}>Work experience</h2>

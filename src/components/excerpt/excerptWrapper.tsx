@@ -20,6 +20,7 @@ const ExcerptWrapper: FunctionComponent<TExcerptWrapperProps> = ({ posts }) => {
             excerpt={node.excerpt}
             slug={node.slug.current}
             publishedAt={node.publishedAt}
+            language={node.language.slug}
           />
         )
       })}

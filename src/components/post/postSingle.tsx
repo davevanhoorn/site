@@ -60,8 +60,8 @@ type TPostSingle = {
 const PostWarning: FunctionComponent<{ language: string }> = ({ language }) => (
   <div className={styles.warning}>
     {"en" === language
-      ? `This post is in progress. Sign up here to get notified when it's done.`
-      : `Dit artikel is nog niet klaar. Meld je hier aan voor mijn nieuwsbrief.`}
+      ? `This article is in concept - almost done 😎`
+      : `Dit artikel staat nog in concept - bijna klaar 😎`}
   </div>
 )
 

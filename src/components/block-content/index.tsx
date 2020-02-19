@@ -41,6 +41,7 @@ const serializers = {
           language={language}
           className={styles.postSyntax}
           wrapLines={true}
+          showLineNumbers={true}
           lineProps={(lineNumber: number) => ({
             className:
               highlightedLines.length && !highlightedLines.includes(lineNumber)

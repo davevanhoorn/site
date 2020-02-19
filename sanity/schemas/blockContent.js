@@ -38,23 +38,21 @@ export default {
         ],
       },
     },
-    // {
-    //   type: "image",
-    //   options: { hotspot: true },
-    //   fields: [
-    //     {
-    //       name: "caption",
-    //       type: "string",
-    //       title: "Caption",
-    //       options: {
-    //         isHighlighted: true, // <-- make this field easily accessible
-    //       },
-    //     },
-    //   ],
-    // },
     {
       type: "code",
       title: "Code",
+      options: {
+        languageAlternatives: [
+          { title: "JavaScript", value: "javascript" },
+          { title: "TypeScript", value: "typescript" },
+          { title: "TSX", value: "tsx" },
+          { title: "HTML", value: "html" },
+          { title: "PHP", value: "php" },
+          { title: "CSS", value: "css" },
+          { title: "text", value: "text" },
+          { title: "JSON", value: "json" },
+        ],
+      },
     },
   ],
 }

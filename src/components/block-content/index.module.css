@@ -22,3 +22,7 @@
   margin-bottom: 1.6315789rem;
   background-color: black !important;
 }
+
+.postSyntax code:first-of-type span {
+  color: rgba(255, 255, 255, 0.25);
+}

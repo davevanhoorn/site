@@ -2,20 +2,20 @@ import React, { FunctionComponent } from "react"
 import ThumbUp from "../atoms/icons/ThumbUp"
 const Hero: FunctionComponent = () => {
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white overflow-hidden mb-20">
       <div className="max-w-screen-xl mx-auto ">
-        <div className="relative z-10 pb-8 bg-white lg:max-w-2xl lg:w-full">
-          <div className="sm:pb-6 pt-6 mx-auto max-w-screen-xl lg:py-12">
-            <div className="px-4 lg:text-left lg:pl-8">
-              <h2 className="sm:text-center lg:text-left text-5xl tracking-loose leading-tight font-bold text-black">
-                Freelance React Developer
+        <div className="relative z-10 bg-white lg:max-w-2xl lg:w-full">
+          <div className="mx-auto max-w-screen-xl">
+            <div className="px-4 lg:text-left lg:pr-0 py-16">
+              <h2 className="sm:text-center lg:text-left text-6xl tracking-loose leading-tight font-bold text-black">
+                Dave van Hoorn
                 <br />
-                <span className="text-gray-500">Dave van Hoorn</span>
+                Freelance React Developer
               </h2>
               <ul className="leading-relaxed mt-3 text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 <li className="relative pl-8">
                   <ThumbUp className="absolute -ml-8 mt-1" />
-                  Ik heb meer dan 10 jaar ervaring met web development
+                  Ik heb meer dan 10 jaar web development ervaring
                 </li>
                 <li className="relative pl-8">
                   <ThumbUp className="absolute -ml-8 mt-1" />
@@ -28,6 +28,10 @@ const Hero: FunctionComponent = () => {
                 <li className="relative pl-8">
                   <ThumbUp className="absolute -ml-8 mt-1" />
                   Ik werk dagelijks met React en TypeScript
+                </li>
+                <li className="relative pl-8">
+                  <ThumbUp className="absolute -ml-8 mt-1" />
+                  Ik ben beschikbaar voor *remote* werk
                 </li>
               </ul>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">

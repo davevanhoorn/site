@@ -41,13 +41,13 @@ const Header: FunctionComponent = () => {
                 alt="Dave"
               />
               <div>
-                <p className="font-medium">
+                <p>
                   <span className="font-bold">
                     {data.site.siteMetadata.title}
                   </span>
                   <br />
-                  <span className="text-green-500">
-                    Per 04-2020 beschikbaar / €75 p.u. / alleen remote
+                  <span className="font-medium text-green-500">
+                    04-2020 beschikbaar / €75 p.u. / remote
                   </span>
                 </p>
               </div>
@@ -76,37 +76,25 @@ const Header: FunctionComponent = () => {
             <div className="hidden md:block md:ml-10">
               <a
                 href="#"
-                className="text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                className="font-bold text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
               >
                 Home
               </a>
               <a
                 href="#"
-                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                className="font-bold ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
               >
                 Over mij
               </a>
               <a
                 href="#"
-                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Portfolio
-              </a>
-              <a
-                href="#"
-                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                className="font-bold ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
               >
                 C.V.
               </a>
               <a
                 href="#"
-                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Blog
-              </a>
-              <a
-                href="#"
-                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                className="font-bold ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
               >
                 Contact
               </a>

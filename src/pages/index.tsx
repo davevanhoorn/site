@@ -43,8 +43,8 @@ const IndexPage: FunctionComponent<TIndexPageProps> = ({ data }) => {
   return (
     <Wrapper>
       <SEO
-        title="Freelance front-end developer"
-        description="Freelance front-end developer (from the Netherlands) working with React and TypeScript."
+        title="Freelance React Developer"
+        description="Freelance React Developer available for remote work"
       />
       <Hero />
       {data.posts.edges && <ExcerptWrapper posts={data.posts.edges} />}

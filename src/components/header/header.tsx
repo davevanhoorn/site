@@ -32,19 +32,87 @@ const Header: FunctionComponent = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <Link to="/" className={styles.logoWrapper}>
-          <img className={styles.thumbnail} src={dave} alt="Dave" />
-          <span className={styles.siteTitle}>
-            {data.site.siteMetadata.title}
-            <span className={styles.siteSubTitle}>
-              {data.site.siteMetadata.description}
-            </span>
-          </span>
-        </Link>
+        <div className="py-6 px-4 w-full max-w-screen-xl mx-auto">
+          <nav className="flex justify-between items-center">
+            <div className="flex items-center justify-center">
+              <img
+                className="mr-4 inline-block h-12 w-12 rounded-full text-white shadow-solid"
+                src={dave}
+                alt="Dave"
+              />
+              <div>
+                <p className="font-medium">
+                  <span className="font-bold">
+                    {data.site.siteMetadata.title}
+                  </span>
+                  <br />
+                  <span className="text-green-500">
+                    Per 04-2020 beschikbaar / €75 p.u. / alleen remote
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="-mr-2 flex items-center md:hidden">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none"
+              >
+                <svg
+                  className="h-8 w-8"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
 
-        <Link to={"/menu"} className={styles.menuButton}>
-          Menu
-        </Link>
+            <div className="hidden md:block md:ml-10">
+              <a
+                href="#"
+                className="text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                Over mij
+              </a>
+              <a
+                href="#"
+                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                Portfolio
+              </a>
+              <a
+                href="#"
+                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                C.V.
+              </a>
+              <a
+                href="#"
+                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                Blog
+              </a>
+              <a
+                href="#"
+                className="ml-8 text-black focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+              >
+                Contact
+              </a>
+            </div>
+          </nav>
+        </div>
       </div>
     </>
   )

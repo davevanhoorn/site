@@ -9,6 +9,7 @@ module.exports = {
     author: "Dave van Hoorn",
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,

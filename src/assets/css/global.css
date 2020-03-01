@@ -8,21 +8,11 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 1.25rem;
-}
-
-@media only screen and (min-width: 768px) {
-  body {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-  }
-}
-
 code span.greyscale,
 code span.greyscale span {
   color: rgba(255, 255, 255, 0.25) !important;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -5,6 +5,7 @@ import Wrapper from "../components/atoms/wrapper"
 import SEO from "../components/atoms/seo"
 import ExcerptWrapper from "../components/excerpt/excerptWrapper"
 import { TPost } from "../components/post/postTypes"
+import Hero from "../components/hero/Hero"
 
 type TIndexPageProps = {
   data: {
@@ -45,6 +46,7 @@ const IndexPage: FunctionComponent<TIndexPageProps> = ({ data }) => {
         title="Freelance front-end developer"
         description="Freelance front-end developer (from the Netherlands) working with React and TypeScript."
       />
+      <Hero />
       {data.posts.edges && <ExcerptWrapper posts={data.posts.edges} />}
     </Wrapper>
   )
